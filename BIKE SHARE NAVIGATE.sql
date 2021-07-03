@@ -37,12 +37,12 @@ SELECT *
 FROM[202103-divvy-tripdata]
 )
 -- distinct value of max, mean ,count of ride_length 
---SELECT DISTINCT ROUND(AVG(CAST(ride_length as int)/60),2) AS avg_ride_length,
---MAX(ride_length) as max_ride_length, COUNT(*) num_trips, member_casual 
---from CTE_BIKE
---where  ride_length is not null
---group by member_casual
---order by num_trips
+SELECT DISTINCT ROUND(AVG(CAST(ride_length as int)/60),2) AS avg_ride_length,
+MAX(ride_length) as max_ride_length, COUNT(*) num_trips, member_casual 
+from CTE_BIKE
+where  ride_length is not null
+group by member_casual
+order by num_trips
 
 --Bike usage by month and memebers and casual users
 select distinct member_casual,(DATENAME(MONTH,started_at)) AS month,
